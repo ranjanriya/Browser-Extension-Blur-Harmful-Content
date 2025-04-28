@@ -15,6 +15,7 @@ This project uses machine learning and keyword analysis to automatically detect 
 - 🧠 **Hybrid Harmfulness Detection**:
   
   - 📝 **Keyword Matching**: Flags violent, abusive, self-harm, substance-use, adult, and emotionally distressing content based on metadata.
+
   - 🤖 **Emotion Classification**: Uses a fine-tuned DistilRoBERTa model to detect harmful emotional cues in video titles, descriptions, and tags.
 
 - 🎨 **Dynamic Blurring**: Applies a blur overlay to videos classified as harmful.
