@@ -1,0 +1,1 @@
+# Browser-Extension-Blur-Harmful-Content
