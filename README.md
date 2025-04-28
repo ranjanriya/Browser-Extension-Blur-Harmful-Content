@@ -40,13 +40,19 @@ This project uses machine learning and keyword analysis to automatically detect 
 
 6. Click the extension icon to select your mode or adjust blur settings.
 
-7. Make sure the **Flask backend** (`video.py`) is running locally on port `4000`:
+7. Set up and run the **Flask backend**:
 
-   - First, install the required Python dependencies by running:
-   
+   - Install the required Python dependencies by running:
      ```bash
      pip install -r requirements.txt
      ```
+
+   - Then start the backend server using:
+     ```bash
+     bash run_videos.sh
+     ```
+
+   - This will automatically set the appropriate open file limit and launch the server on `localhost:4000`.
 
 8. Start browsing YouTube and experience safer, filtered content viewing!
 
