@@ -9,12 +9,18 @@ This project uses machine learning and keyword analysis to automatically detect 
 ## ✨ Key Features
 
 - 🎯 **Real-time YouTube Monitoring**: Detects and analyzes visible YouTube videos as you browse.
+  
 - 🚀 **Batch Processing**: Groups up to 25 video URLs for efficient backend analysis.
+  
 - 🧠 **Hybrid Harmfulness Detection**:
+  
   - 📝 **Keyword Matching**: Flags violent, abusive, self-harm, substance-use, adult, and emotionally distressing content based on metadata.
   - 🤖 **Emotion Classification**: Uses a fine-tuned DistilRoBERTa model to detect harmful emotional cues in video titles, descriptions, and tags.
+
 - 🎨 **Dynamic Blurring**: Applies a blur overlay to videos classified as harmful.
+
 - 🛠️ **User Customization**: Choose which categories (e.g., violence, adult content) to blur through extension settings.
+
 - ⚡ **Lightweight and Fast**: Operates without needing full video downloads — only metadata is used.
 
 ---
