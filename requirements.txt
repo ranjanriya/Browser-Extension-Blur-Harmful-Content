@@ -1,0 +1,5 @@
+flask
+torch
+transformers
+yt_dlp
+flask_cors

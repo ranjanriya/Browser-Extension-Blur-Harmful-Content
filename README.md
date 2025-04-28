@@ -1,76 +1,82 @@
-🛡️ YouTube Harmful Content Detection and Blurring Extension
+# 🛡️ YouTube Harmful Content Detection and Blurring Extension
 
 This project uses machine learning and keyword analysis to automatically detect potentially harmful YouTube videos based on their metadata — and blurs them for safer browsing.
 
-📚 This project was developed as part of CSCI-534: Affective Computing taught by Professor Jonathan Gratch at the University of Southern California (USC).
+> 📚 **This project was developed as part of _CSCI-534: Affective Computing_ taught by Professor Jonathan Gratch at the _University of Southern California (USC)._**
 
-🚀 Key Features
-Real-time YouTube Monitoring: Detects and analyzes visible YouTube videos as you browse.
+---
 
-Batch Processing: Groups up to 25 video URLs for efficient backend analysis.
+## ✨ Key Features
 
-Hybrid Harmfulness Detection:
+- 🎯 **Real-time YouTube Monitoring**: Detects and analyzes visible YouTube videos as you browse.
+- 🚀 **Batch Processing**: Groups up to 25 video URLs for efficient backend analysis.
+- 🧠 **Hybrid Harmfulness Detection**:
+  - 📝 **Keyword Matching**: Flags violent, abusive, self-harm, substance-use, adult, and emotionally distressing content based on metadata.
+  - 🤖 **Emotion Classification**: Uses a fine-tuned DistilRoBERTa model to detect harmful emotional cues in video titles, descriptions, and tags.
+- 🎨 **Dynamic Blurring**: Applies a blur overlay to videos classified as harmful.
+- 🛠️ **User Customization**: Choose which categories (e.g., violence, adult content) to blur through extension settings.
+- ⚡ **Lightweight and Fast**: Operates without needing full video downloads — only metadata is used.
 
-Keyword Matching: Flags violent, abusive, self-harm, substance-use, adult, and emotionally distressing content based on metadata.
+---
 
-Emotion Classification: Uses a fine-tuned DistilRoBERTa model to detect harmful emotional cues in video titles, descriptions, and tags.
+## ⚙️ Setup Instructions
 
-Dynamic Blurring: Applies a blur overlay to videos classified as harmful.
+1. Clone this repository or download the project files.
 
-User Customization: Choose which categories (e.g., violence, adult content) to blur through extension settings.
+2. Open **Google Chrome** and navigate to: `chrome://extensions/`
 
-Lightweight and Fast: Operates without needing full video downloads — only metadata is used.
+3. Enable **Developer mode** (toggle in the top right corner).
 
-⚙️ Setup Instructions
-Clone this repository or download the project files.
+4. Click **Load unpacked** and select the extension directory (where `content.js` is located).
 
-Open Google Chrome and go to: chrome://extensions/
+5. The extension icon should now appear in your Chrome toolbar.
 
-Enable Developer mode (top right corner).
+6. Click the extension icon to select your mode or adjust blur settings.
 
-Click Load unpacked and select the extension directory (content.js must be included).
+7. Make sure the **Flask backend** (`video.py`) is running locally on port `4000`:
 
-The extension icon should appear in your Chrome toolbar.
+   - First, install the required Python dependencies by running:
+   
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-Click the extension icon to select the mode or adjust settings (e.g., select categories to blur).
+8. Start browsing YouTube and experience safer, filtered content viewing!
 
-Start browsing YouTube and experience safer, filtered content viewing!
+---
 
-🧠 Technology Stack
-Backend:
+## 🧰 Technology Stack
 
-Python 3.x
+**Backend**:
+- Python 3.x
+- Flask (REST API server)
+- yt_dlp (fetching YouTube metadata)
+- Huggingface Transformers (`j-hartmann/emotion-english-distilroberta-base`)
 
-Flask (REST API server)
+**Frontend**:
+- Chrome Extension (Manifest V3)
+- JavaScript (content scripts)
+- Chrome Storage API
+- Intersection Observers and Mutation Observers for dynamic page tracking
 
-yt_dlp for fetching YouTube metadata
+---
 
-Huggingface Transformers (j-hartmann/emotion-english-distilroberta-base model)
+## ⚡ Important Notes
 
-Frontend:
+- The backend must be running for the extension to classify videos.
+- The AI model automatically detects and uses GPU if available (CUDA), otherwise defaults to CPU.
+- Only video metadata (not full videos) is processed — ensuring lightweight performance.
 
-Chrome Extension
+---
 
-JavaScript (content.js)
+## 🙏 Acknowledgments
 
-Chrome Storage API
+- Developed for **CSCI-534: Affective Computing** at the **University of Southern California (USC)**.
+- Guided by **Professor Jonathan Gratch**.
+- Emotion classification model credit: [`j-hartmann/emotion-english-distilroberta-base`](https://huggingface.co/j-hartmann/emotion-english-distilroberta-base).
 
-Intersection Observers and Mutation Observers for dynamic page tracking
+---
 
-📄 Important Notes
-The Flask backend (video.py) must be running locally on port 4000 for the extension to work.
+## 🧠 Final Note
 
-Make sure you have installed all Python dependencies listed in requirements.txt.
-
-The model uses GPU if available (cuda) for faster performance, otherwise defaults to CPU.
-
-📚 Acknowledgments
-This project is part of coursework for CSCI-534: Affective Computing, Fall 2024/Spring 2025, at University of Southern California (USC).
-
-Guided by Professor Jonathan Gratch.
-
-Emotion classification model credit: j-hartmann/emotion-english-distilroberta-base.
-
-🎯 Final Note
-By combining affective computing techniques and browser-based real-time interventions, this project demonstrates how emotion recognition models can enhance online safety and user experience on content platforms.
-
+By combining affective computing techniques with browser-based real-time interventions, this project demonstrates how emotion recognition models can enhance online safety and improve user experiences on major content platforms like YouTube.
