@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Filter</title>
+  <!-- <style>
+    body { font-family: Arial, sans-serif; padding: 10px; width: 250px; }
+    h2 { margin-top: 0; }
+    label { display: block; margin: 10px 0; }
+    button { margin-top: 10px; }
+  </style> -->
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h2>Video Filter Control</h2>
+
+  <label>
+    <input type="checkbox" id="enableBlur" checked />
+    Enable Harmful Video Blur
+  </label>
+
+
+  <h3>Choose what to blur:</h3>
+  <label><input type="checkbox" class="blur-category" value="violence" /> Violence</label>
+  <label><input type="checkbox" class="blur-category" value="self-harm" /> Self-Harm</label>
+  <label><input type="checkbox" class="blur-category" value="abuse" /> Abuse</label>
+  <label><input type="checkbox" class="blur-category" value="substance-use" /> Substance Use</label>
+  <label><input type="checkbox" class="blur-category" value="adult" /> Adult</label>
+  <label><input type="checkbox" class="blur-category" value="emotional-distress" /> Emotional Distress</label>
+
+
+  <button id="reloadBtn">Reload YouTube</button>
+  <script src="popup.js"></script>
+</body>
+</html>

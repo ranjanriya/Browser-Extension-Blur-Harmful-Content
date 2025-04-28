@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Blur Extension",
+  "version": "1.0",
+  "description": "Blur videos on all pages",
+  "permissions": ["activeTab", "scripting","storage"],
+  "action": {
+    "default_popup": "scripts/popup.html"
+  },
+   "icons": {
+    "48": "icons/Shield_SmUse_Card_RGB.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
